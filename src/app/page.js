@@ -1,101 +1,156 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import Confetti from "react-confetti";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+
+const questions = [
+  {
+    question: "What is the largest country in Europe by land area?",
+    options: ["France", "Germany", "Russia", "Spain"],
+    answer: "Russia",
+  },
+  {
+    question: "In which year was the European Union founded with the Maastricht Treaty?",
+    options: ["1986", "1992", "2000", "1973"],
+    answer: "1992",
+  },
+  {
+    question: "Which city is the official seat of the European Parliament?",
+    options: ["Brussels", "Strasbourg", "Luxembourg", "Frankfurt"],
+    answer: "Strasbourg",
+  },
+  {
+    question: "Which of these countries is NOT part of the Eurozone?",
+    options: ["Portugal", "Sweden", "Italy", "Belgium"],
+    answer: "Sweden",
+  },
+  {
+    question: "What is the longest river in Europe?",
+    options: ["Danube", "Seine", "Volga", "Rhine"],
+    answer: "Volga",
+  },
+  {
+    question: "Which is the only European country with a capital city that starts with 'Z'?",
+    options: ["Switzerland", "Croatia", "Slovakia", "Slovenia"],
+    answer: "Slovenia",
+  },
+  {
+    question: "In which country is the Leaning Tower of Pisa located?",
+    options: ["Italy", "Spain", "France", "Greece"],
+    answer: "Italy",
+  },
+  {
+    question: "How many countries are part of the European Union in 2024?",
+    options: ["25", "27", "30", "32"],
+    answer: "27",
+  },
+  {
+    question: "What is the official language of Austria?",
+    options: ["German", "French", "Hungarian", "English"],
+    answer: "German",
+  },
+  {
+    question: "Which European island is known as the 'Emerald Isle'?",
+    options: ["Iceland", "Ireland", "Malta", "Corsica"],
+    answer: "Ireland",
+  },
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [user, setUser] = useState(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  useEffect(() => {
+    const savedProgress = localStorage.getItem('quizProgress');
+    if (savedProgress) {
+      const { savedScore, savedQuestionIndex } = JSON.parse(savedProgress);
+      setScore(savedScore);
+      setCurrentQuestionIndex(savedQuestionIndex);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem('quizProgress', JSON.stringify({
+        savedScore: score,
+        savedQuestionIndex: currentQuestionIndex,
+      }));
+    }
+  }, [score, currentQuestionIndex, user]);
+
+  const currentQuestion = questions[currentQuestionIndex];
+
+  function handleAnswer(option) {
+    if (option === currentQuestion.answer) {
+      setScore(score + 1);
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+        handleNextQuestion();
+      }, 2000);
+    } else {
+      handleNextQuestion();
+    }
+  }
+
+  function handleNextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      alert(`Quiz finished! Your score is ${score}/${questions.length}`);
+      setCurrentQuestionIndex(0);
+      setScore(0);
+    }
+  }
+
+  const responseGoogle = (response) => {
+    console.log(response);
+    setUser(response.profileObj);
+  }
+
+  return (
+    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-dark text-light p-8">
+        {showConfetti && <Confetti />}
+        <header className="text-2xl font-bold mb-4">Score: {score}</header>
+        <main className="flex flex-col items-center gap-8">
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={180}
+            height={38}
+            priority
+          />
+          <div className="text-center text-xl font-semibold">
+            {currentQuestion.question}
+          </div>
+          <div className="flex flex-col gap-4">
+            {currentQuestion.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswer(option)}
+                className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {!user && (
+            <GoogleLogin
+              onSuccess={responseGoogle}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+              className="mt-4"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          )}
+        </main>
+      </div>
+    </GoogleOAuthProvider>
   );
 }
