@@ -1,0 +1,54 @@
+{
+    "history": [
+      {
+        "question": "Which treaty ended World War I and imposed heavy reparations on Germany?",
+        "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Rome", "Treaty of Vienna"],
+        "answer": "Treaty of Versailles"
+      },
+      {
+        "question": "Who was the first Emperor of the Holy Roman Empire?",
+        "options": ["Charlemagne", "Otto I", "Frederick Barbarossa", "Napoleon Bonaparte"],
+        "answer": "Charlemagne"
+      },
+      {
+        "question": "What year did the Berlin Wall fall, marking the symbolic end of the Cold War?",
+        "options": ["1985", "1989", "1991", "1993"],
+        "answer": "1989"
+      },
+      {
+        "question": "Which European country was the first to grant women the right to vote in national elections?",
+        "options": ["France", "Germany", "Finland", "United Kingdom"],
+        "answer": "Finland"
+      },
+      {
+        "question": "What was the name of the pandemic that devastated Europe in the 14th century?",
+        "options": ["The Great Plague", "The Spanish Flu", "The Black Death", "The Red Plague"],
+        "answer": "The Black Death"
+      },
+      {
+        "question": "Who led the Soviet Union during World War II?",
+        "options": ["Vladimir Lenin", "Joseph Stalin", "Nikita Khrushchev", "Leon Trotsky"],
+        "answer": "Joseph Stalin"
+      },
+      {
+        "question": "Which European country was the birthplace of the Renaissance?",
+        "options": ["Spain", "France", "Italy", "Germany"],
+        "answer": "Italy"
+      },
+      {
+        "question": "Which event sparked the start of World War I?",
+        "options": ["The invasion of Poland", "The signing of the Treaty of Brest-Litovsk", "The assassination of Archduke Franz Ferdinand", "The Russian Revolution"],
+        "answer": "The assassination of Archduke Franz Ferdinand"
+      },
+      {
+        "question": "What was the name of the economic recovery plan for Europe after World War II?",
+        "options": ["The Marshall Plan", "The Truman Doctrine", "The Molotov Plan", "The European Recovery Act"],
+        "answer": "The Marshall Plan"
+      },
+      {
+        "question": "Which war was fought between England and France from 1337 to 1453?",
+        "options": ["The Franco-Prussian War", "The Hundred Years' War", "The Thirty Years' War", "The Napoleonic Wars"],
+        "answer": "The Hundred Years' War"
+      }
+    ]
+  }

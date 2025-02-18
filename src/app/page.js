@@ -1,68 +1,28 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import Confetti from "react-confetti";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
-const questions = [
-  {
-    question: "What is the largest country in Europe by land area?",
-    options: ["France", "Germany", "Russia", "Spain"],
-    answer: "Russia",
-  },
-  {
-    question: "In which year was the European Union founded with the Maastricht Treaty?",
-    options: ["1986", "1992", "2000", "1973"],
-    answer: "1992",
-  },
-  {
-    question: "Which city is the official seat of the European Parliament?",
-    options: ["Brussels", "Strasbourg", "Luxembourg", "Frankfurt"],
-    answer: "Strasbourg",
-  },
-  {
-    question: "Which of these countries is NOT part of the Eurozone?",
-    options: ["Portugal", "Sweden", "Italy", "Belgium"],
-    answer: "Sweden",
-  },
-  {
-    question: "What is the longest river in Europe?",
-    options: ["Danube", "Seine", "Volga", "Rhine"],
-    answer: "Volga",
-  },
-  {
-    question: "Which is the only European country with a capital city that starts with 'Z'?",
-    options: ["Switzerland", "Croatia", "Slovakia", "Slovenia"],
-    answer: "Slovenia",
-  },
-  {
-    question: "In which country is the Leaning Tower of Pisa located?",
-    options: ["Italy", "Spain", "France", "Greece"],
-    answer: "Italy",
-  },
-  {
-    question: "How many countries are part of the European Union in 2024?",
-    options: ["25", "27", "30", "32"],
-    answer: "27",
-  },
-  {
-    question: "What is the official language of Austria?",
-    options: ["German", "French", "Hungarian", "English"],
-    answer: "German",
-  },
-  {
-    question: "Which European island is known as the 'Emerald Isle'?",
-    options: ["Iceland", "Ireland", "Malta", "Corsica"],
-    answer: "Ireland",
-  },
-];
-
 export default function Home() {
+  const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [user, setUser] = useState(null);
+  const quizRef = useRef(null);
+
+  useEffect(() => {
+    fetch("/questions/history.json")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => setQuestions(data.history))
+      .catch(error => console.error("Error loading questions:", error));
+  }, []);
 
   useEffect(() => {
     const savedProgress = localStorage.getItem('quizProgress');
@@ -81,6 +41,8 @@ export default function Home() {
       }));
     }
   }, [score, currentQuestionIndex, user]);
+
+  if (questions.length === 0) return <p>Loading questions...</p>;
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -110,22 +72,44 @@ export default function Home() {
   const responseGoogle = (response) => {
     console.log(response);
     setUser(response.profileObj);
-  }
+  };
+
+  const scrollToQuiz = () => {
+    if (quizRef.current) {
+      quizRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-      <div className="flex flex-col items-center justify-center min-h-screen bg-dark text-light p-8">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white p-8 font-sans">
+        <section className="flex flex-col items-center justify-center mt-32">
+          <h1 className="text-6xl font-bold text-center mt-10 mb-8">
+            The Europe Trivia Quiz
+          </h1>
+        </section>
+
+        <section className="flex flex-col items-center justify-center mt-8 mb-8">
+          <div className="w-full md:w-2/3 text-center">
+            <p className="text-3xl font-bold mb-4">Test Your Knowledge of Europe: History, Culture, and More! 🌍💡</p>
+          </div>
+        </section>
+
+        <button 
+          onClick={scrollToQuiz} 
+          className="flex items-center px-6 py-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-600 transition-colors mb-8 cursor-pointer"
+        >
+          Start Quiz
+          <svg className="w-6 h-6 text-gray-800 dark:text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
         {showConfetti && <Confetti />}
-        <header className="text-2xl font-bold mb-4">Score: {score}</header>
-        <main className="flex flex-col items-center gap-8">
-          <Image
-            className="dark:invert"
-            src="/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
+        
+        <header className="text-2xl font-bold mt-20 mb-4">Score: {score}</header>
+        
+        <main ref={quizRef} className="flex flex-col items-center gap-8">
           <div className="text-center text-xl font-semibold">
             {currentQuestion.question}
           </div>
@@ -134,19 +118,20 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => handleAnswer(option)}
-                className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
+                className="px-4 py-2 bg-yellow-500 text-black rounded-full hover:bg-yellow-600 transition-colors cursor-pointer"
               >
                 {option}
               </button>
             ))}
           </div>
+
           {!user && (
             <GoogleLogin
               onSuccess={responseGoogle}
               onError={() => {
                 console.log('Login Failed');
               }}
-              className="mt-4"
+              className="mt-4 cursor-pointer"
             />
           )}
         </main>
