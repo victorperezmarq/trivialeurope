@@ -20,7 +20,10 @@ export default function Home() {
         }
         return response.json();
       })
-      .then(data => setQuestions(data.history))
+      .then(data => {
+        const shuffledQuestions = shuffleArray(data.history);
+        setQuestions(shuffledQuestions);
+      })
       .catch(error => console.error("Error loading questions:", error));
   }, []);
 
@@ -79,6 +82,14 @@ export default function Home() {
       quizRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
