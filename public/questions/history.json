@@ -1,54 +1,404 @@
 {
-    "history": [
-      {
-        "question": "Which treaty ended World War I and imposed heavy reparations on Germany?",
-        "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Rome", "Treaty of Vienna"],
-        "answer": "Treaty of Versailles"
-      },
-      {
-        "question": "Who was the first Emperor of the Holy Roman Empire?",
-        "options": ["Charlemagne", "Otto I", "Frederick Barbarossa", "Napoleon Bonaparte"],
-        "answer": "Charlemagne"
-      },
-      {
-        "question": "What year did the Berlin Wall fall, marking the symbolic end of the Cold War?",
-        "options": ["1985", "1989", "1991", "1993"],
-        "answer": "1989"
-      },
-      {
-        "question": "Which European country was the first to grant women the right to vote in national elections?",
-        "options": ["France", "Germany", "Finland", "United Kingdom"],
-        "answer": "Finland"
-      },
-      {
-        "question": "What was the name of the pandemic that devastated Europe in the 14th century?",
-        "options": ["The Great Plague", "The Spanish Flu", "The Black Death", "The Red Plague"],
-        "answer": "The Black Death"
-      },
-      {
-        "question": "Who led the Soviet Union during World War II?",
-        "options": ["Vladimir Lenin", "Joseph Stalin", "Nikita Khrushchev", "Leon Trotsky"],
-        "answer": "Joseph Stalin"
-      },
-      {
-        "question": "Which European country was the birthplace of the Renaissance?",
-        "options": ["Spain", "France", "Italy", "Germany"],
-        "answer": "Italy"
-      },
-      {
-        "question": "What event is considered the start of World War I?",
-        "options": ["The invasion of Poland", "The signing of the Treaty of Brest-Litovsk", "The assassination of Archduke Franz Ferdinand", "The Russian Revolution"],
-        "answer": "The assassination of Archduke Franz Ferdinand"
-      },
-      {
-        "question": "What was the name of the economic recovery plan for Europe after World War II?",
-        "options": ["The Marshall Plan", "The Truman Doctrine", "The Molotov Plan", "The European Recovery Act"],
-        "answer": "The Marshall Plan"
-      },
-      {
-        "question": "Which war was fought between England and France from 1337 to 1453?",
-        "options": ["The Franco-Prussian War", "The Hundred Years' War", "The Thirty Years' War", "The Napoleonic Wars"],
-        "answer": "The Hundred Years' War"
-      }
-    ]
-  }
+  "history": [
+    {
+      "question": "Which treaty ended World War I and imposed heavy reparations on Germany?",
+      "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Rome", "Treaty of Vienna"],
+      "answer": "Treaty of Versailles"
+    },
+    {
+      "question": "Who was the first Emperor of the Holy Roman Empire?",
+      "options": ["Charlemagne", "Otto I", "Frederick Barbarossa", "Napoleon Bonaparte"],
+      "answer": "Charlemagne"
+    },
+    {
+      "question": "What year did the Berlin Wall fall, marking the symbolic end of the Cold War?",
+      "options": ["1985", "1989", "1991", "1993"],
+      "answer": "1989"
+    },
+    {
+      "question": "Which European country was the first to grant women the right to vote in national elections?",
+      "options": ["France", "Germany", "Finland", "United Kingdom"],
+      "answer": "Finland"
+    },
+    {
+      "question": "What was the name of the pandemic that devastated Europe in the 14th century?",
+      "options": ["The Great Plague", "The Spanish Flu", "The Black Death", "The Red Plague"],
+      "answer": "The Black Death"
+    },
+    {
+      "question": "Who led the Soviet Union during World War II?",
+      "options": ["Vladimir Lenin", "Joseph Stalin", "Nikita Khrushchev", "Leon Trotsky"],
+      "answer": "Joseph Stalin"
+    },
+    {
+      "question": "Which European country was the birthplace of the Renaissance?",
+      "options": ["Spain", "France", "Italy", "Germany"],
+      "answer": "Italy"
+    },
+    {
+      "question": "What event is considered the start of World War I?",
+      "options": ["The invasion of Poland", "The signing of the Treaty of Brest-Litovsk", "The assassination of Archduke Franz Ferdinand", "The Russian Revolution"],
+      "answer": "The assassination of Archduke Franz Ferdinand"
+    },
+    {
+      "question": "What was the name of the economic recovery plan for Europe after World War II?",
+      "options": ["The Marshall Plan", "The Truman Doctrine", "The Molotov Plan", "The European Recovery Act"],
+      "answer": "The Marshall Plan"
+    },
+    {
+      "question": "Which war was fought between England and France from 1337 to 1453?",
+      "options": ["The Franco-Prussian War", "The Hundred Years' War", "The Thirty Years' War", "The Napoleonic Wars"],
+      "answer": "The Hundred Years' War"
+    },
+    {
+      "question": "Which European country has the longest coastline?",
+      "options": ["Spain", "Norway", "Italy", "Greece"],
+      "answer": "Norway"
+    },
+    {
+      "question": "What is the highest mountain in Europe?",
+      "options": ["Mont Blanc", "Mount Elbrus", "Matterhorn", "Grossglockner"],
+      "answer": "Mount Elbrus"
+    },
+    {
+      "question": "Which of these rivers flows through the most countries?",
+      "options": ["Danube", "Rhine", "Volga", "Seine"],
+      "answer": "Danube"
+    },
+    {
+      "question": "Which treaty officially ended World War I?",
+      "options": ["Treaty of Versailles", "Treaty of Paris", "Treaty of Tordesillas", "Treaty of Vienna"],
+      "answer": "Treaty of Versailles"
+    },
+    {
+      "question": "Who was the first emperor of the Holy Roman Empire?",
+      "options": ["Napoleon Bonaparte", "Charlemagne", "Otto I", "Julius Caesar"],
+      "answer": "Charlemagne"
+    },
+    {
+      "question": "In which year did the Berlin Wall fall?",
+      "options": ["1985", "1987", "1989", "1991"],
+      "answer": "1989"
+    },
+    {
+      "question": "Which European city is famous for its annual La Tomatina festival?",
+      "options": ["Madrid", "Valencia", "Buñol", "Barcelona"],
+      "answer": "Buñol"
+    },
+    {
+      "question": "Who wrote the famous novel Don Quixote?",
+      "options": ["Miguel de Cervantes", "William Shakespeare", "Victor Hugo", "Leo Tolstoy"],
+      "answer": "Miguel de Cervantes"
+    },
+    {
+      "question": "The Louvre Museum, home to the Mona Lisa, is located in which city?",
+      "options": ["Rome", "Madrid", "Paris", "Berlin"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Which country has won the most UEFA European Championship titles?",
+      "options": ["Germany", "Spain", "Italy", "France"],
+      "answer": "Germany"
+    },
+    {
+      "question": "In which year did London host the Summer Olympics for the third time?",
+      "options": ["2000", "2008", "2012", "2016"],
+      "answer": "2012"
+    },
+    {
+      "question": "Which European football club has won the most UEFA Champions League titles?",
+      "options": ["FC Barcelona", "Bayern Munich", "Manchester United", "Real Madrid"],
+      "answer": "Real Madrid"
+    },
+    {
+      "question": "Which city is home to the headquarters of the European Union?",
+      "options": ["Strasbourg", "Luxembourg", "Brussels", "Berlin"],
+      "answer": "Brussels"
+    },
+    {
+      "question": "How many countries currently use the Euro as their official currency?",
+      "options": ["15", "20", "27", "30"],
+      "answer": "20"
+    },
+    {
+      "question": "Who was the first female Prime Minister of the United Kingdom?",
+      "options": ["Theresa May", "Angela Merkel", "Margaret Thatcher", "Indira Gandhi"],
+      "answer": "Margaret Thatcher"
+    },
+    {
+      "question": "What is the smallest country in Europe by area?",
+      "options": ["Liechtenstein", "Monaco", "San Marino", "Vatican City"],
+      "answer": "Vatican City"
+    },
+    {
+      "question": "Which European country has the most islands?",
+      "options": ["Greece", "Norway", "Sweden", "Italy"],
+      "answer": "Sweden"
+    },
+    {
+      "question": "The Iberian Peninsula consists of which two main countries?",
+      "options": ["France and Spain", "Spain and Portugal", "Italy and Spain", "Portugal and France"],
+      "answer": "Spain and Portugal"
+    },
+    {
+      "question": "Which empire ruled over much of Eastern Europe for over 600 years until its collapse after World War I?",
+      "options": ["Ottoman Empire", "Holy Roman Empire", "Russian Empire", "Byzantine Empire"],
+      "answer": "Ottoman Empire"
+    },
+    {
+      "question": "Who was the leader of the Soviet Union during World War II?",
+      "options": ["Vladimir Lenin", "Joseph Stalin", "Leon Trotsky", "Nikita Khrushchev"],
+      "answer": "Joseph Stalin"
+    },
+    {
+      "question": "Which Renaissance artist painted the ceiling of the Sistine Chapel?",
+      "options": ["Leonardo da Vinci", "Raphael", "Michelangelo", "Donatello"],
+      "answer": "Michelangelo"
+    },
+    {
+      "question": "Which European city is famous for its Carnival, where people wear elaborate masks?",
+      "options": ["Barcelona", "Venice", "Nice", "Cologne"],
+      "answer": "Venice"
+    },
+    {
+      "question": "The Nobel Prizes are awarded in which European country?",
+      "options": ["Norway", "Denmark", "Sweden", "Switzerland"],
+      "answer": "Sweden"
+    },
+    {
+      "question": "Which country is home to the famous Oktoberfest beer festival?",
+      "options": ["Austria", "Germany", "Belgium", "Switzerland"],
+      "answer": "Germany"
+    },
+    {
+      "question": "What is the capital city of Ukraine?",
+      "options": ["Kyiv", "Minsk", "Warsaw", "Riga"],
+      "answer": "Kyiv"
+    },
+    {
+      "question": "Which club won the first-ever UEFA Champions League in 1956?",
+      "options": ["AC Milan", "Manchester United", "Real Madrid", "Bayern Munich"],
+      "answer": "Real Madrid"
+    },
+    {
+      "question": "The first modern Olympic Games were held in which European city?",
+      "options": ["Paris", "Rome", "Athens", "London"],
+      "answer": "Athens"
+    },
+    {
+      "question": "The European Parliament has official seats in Strasbourg and which other city?",
+      "options": ["Brussels", "Frankfurt", "Luxembourg", "Geneva"],
+      "answer": "Brussels"
+    },
+    {
+      "question": "What is the most widely spoken native language in Europe?",
+      "options": ["French", "Spanish", "German", "English"],
+      "answer": "German"
+    },
+    {
+      "question": "What is the official currency of Switzerland?",
+      "options": ["Euro", "Swiss Franc", "British Pound", "Danish Krone"],
+      "answer": "Swiss Franc"
+    },
+
+    {
+      "question": "Which European country has the highest number of lakes?",
+      "options": ["Sweden", "Finland", "Norway", "Switzerland"],
+      "answer": "Finland"
+    },
+    {
+      "question": "Who was the first Emperor of France?",
+      "options": ["Louis XIV", "Napoleon Bonaparte", "Charlemagne", "Francis I"],
+      "answer": "Napoleon Bonaparte"
+    },
+    {
+      "question": "The Nobel Prizes are awarded in which European city?",
+      "options": ["Oslo", "Stockholm", "Copenhagen", "Helsinki"],
+      "answer": "Stockholm"
+    },
+    {
+      "question": "The Sagrada Familia, an iconic basilica still under construction, is located in which city?",
+      "options": ["Madrid", "Barcelona", "Valencia", "Seville"],
+      "answer": "Barcelona"
+    },
+    {
+      "question": "What is the name of the strait that separates Spain and Morocco?",
+      "options": ["English Channel", "Strait of Gibraltar", "Bosporus", "Dardanelles"],
+      "answer": "Strait of Gibraltar"
+    },
+    {
+      "question": "Who was the British Prime Minister during World War II?",
+      "options": ["Neville Chamberlain", "Winston Churchill", "Clement Attlee", "Harold Macmillan"],
+      "answer": "Winston Churchill"
+    },
+    {
+      "question": "The Prado Museum is located in which European capital?",
+      "options": ["Lisbon", "Madrid", "Rome", "Athens"],
+      "answer": "Madrid"
+    },
+    {
+      "question": "Which European country is known as the 'Land of Fire and Ice' due to its volcanoes and glaciers?",
+      "options": ["Norway", "Iceland", "Finland", "Sweden"],
+      "answer": "Iceland"
+    },
+    {
+      "question": "The UEFA Champions League final is traditionally played in which month?",
+      "options": ["April", "May", "June", "July"],
+      "answer": "May"
+    },
+    {
+      "question": "The Renaissance period began in which European country?",
+      "options": ["France", "Spain", "Italy", "Germany"],
+      "answer": "Italy"
+    },
+    {
+      "question": "Which mountain range separates Europe from Asia?",
+      "options": ["Carpathians", "Ural Mountains", "Pyrenees", "Alps"],
+      "answer": "Ural Mountains"
+    },
+    {
+      "question": "The Eurovision Song Contest began in which decade?",
+      "options": ["1940s", "1950s", "1960s", "1970s"],
+      "answer": "1950s"
+    },
+    {
+      "question": "What is the most widely spoken native language in Europe?",
+      "options": ["English", "French", "German", "Spanish"],
+      "answer": "German"
+    },
+    {
+      "question": "Which European country was formerly known as Lusitania in ancient times?",
+      "options": ["Spain", "Portugal", "Italy", "Greece"],
+      "answer": "Portugal"
+    },
+
+    {
+      "question": "Who painted the ceiling of the Sistine Chapel?",
+      "options": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+      "answer": "Michelangelo"
+    },
+    {
+      "question": "The 2024 Summer Olympics will be hosted in which European city?",
+      "options": ["Rome", "Berlin", "Paris", "Madrid"],
+      "answer": "Paris"
+    },
+    {
+      "question": "What is the capital of Lithuania?",
+      "options": ["Riga", "Tallinn", "Vilnius", "Bratislava"],
+      "answer": "Vilnius"
+    },
+    {
+      "question": "Which football club has won the most UEFA Champions League titles?",
+      "options": ["Barcelona", "Manchester United", "Bayern Munich", "Real Madrid"],
+      "answer": "Real Madrid"
+    },
+    {
+      "question": "Which European country was the first to legalize same-sex marriage in 2001?",
+      "options": ["Spain", "Sweden", "Netherlands", "Denmark"],
+      "answer": "Netherlands"
+    },
+    {
+      "question": "What is the oldest university in Europe, founded in 1088?",
+      "options": ["University of Oxford", "University of Paris", "University of Bologna", "University of Salamanca"],
+      "answer": "University of Bologna"
+    },
+    {
+      "question": "What is the highest mountain in Europe?",
+      "options": ["Mont Blanc", "Matterhorn", "Elbrus", "Grossglockner"],
+      "answer": "Elbrus"
+    },
+    {
+      "question": "The European Union officially has how many stars on its flag?",
+      "options": ["10", "12", "15", "27"],
+      "answer": "12"
+    },
+    {
+      "question": "Which famous composer was born in Salzburg, Austria?",
+      "options": ["Ludwig van Beethoven", "Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Franz Schubert"],
+      "answer": "Wolfgang Amadeus Mozart"
+    },
+    {
+      "question": "What is the only country in the world to have an official language that is a Uralic language?",
+      "options": ["Finland", "Hungary", "Estonia", "Latvia"],
+      "answer": "Finland"
+    },
+    {
+      "question": "Which Scandinavian country is known for its fjords?",
+      "options": ["Sweden", "Denmark", "Norway", "Iceland"],
+      "answer": "Norway"
+    },
+    {
+      "question": "The Treaty of Maastricht, which led to the creation of the European Union, was signed in which country?",
+      "options": ["Belgium", "Netherlands", "Germany", "France"],
+      "answer": "Netherlands"
+    },
+
+    
+    {
+      "question": "Which European city is famous for its canals and is sometimes called the 'Venice of the North'?",
+      "options": ["Amsterdam", "Copenhagen", "Stockholm", "Bruges"],
+      "answer": "Amsterdam"
+    },
+    {
+      "question": "Which empire controlled most of Europe at its peak around the year 117 AD?",
+      "options": ["Byzantine Empire", "Ottoman Empire", "Holy Roman Empire", "Roman Empire"],
+      "answer": "Roman Empire"
+    },
+    {
+      "question": "Which European city hosted the first modern Olympic Games in 1896?",
+      "options": ["Rome", "Paris", "Athens", "London"],
+      "answer": "Athens"
+    },
+    {
+      "question": "What is the most widely spoken native language in Europe?",
+      "options": ["English", "French", "German", "Spanish"],
+      "answer": "German"
+    },
+    {
+      "question": "Which country is known for its traditional dish called 'paella'?",
+      "options": ["Portugal", "Spain", "Italy", "France"],
+      "answer": "Spain"
+    },
+    {
+      "question": "The Battle of Waterloo in 1815 took place in which present-day country?",
+      "options": ["France", "Germany", "Belgium", "Netherlands"],
+      "answer": "Belgium"
+    },
+    {
+      "question": "What is the second-largest island in Europe (after Great Britain)?",
+      "options": ["Iceland", "Ireland", "Sicily", "Corsica"],
+      "answer": "Ireland"
+    },
+    {
+      "question": "Which European city is home to the famous landmark La Sagrada Familia?",
+      "options": ["Madrid", "Rome", "Barcelona", "Lisbon"],
+      "answer": "Barcelona"
+    },
+    {
+      "question": "What is the official currency of Sweden?",
+      "options": ["Euro", "Krona", "Danish Krone", "Pound Sterling"],
+      "answer": "Krona"
+    },
+    {
+      "question": "The European Space Agency (ESA) has its headquarters in which country?",
+      "options": ["France", "Germany", "Belgium", "Italy"],
+      "answer": "France"
+    },
+    {
+      "question": "What is the name of the sea that lies between Italy and the Balkan Peninsula?",
+      "options": ["Ionian Sea", "Adriatic Sea", "Tyrrhenian Sea", "Aegean Sea"],
+      "answer": "Adriatic Sea"
+    },
+    {
+      "question": "Which European monarch has had the longest reign in history?",
+      "options": ["Queen Victoria", "King Louis XIV", "Queen Elizabeth II", "Emperor Franz Joseph"],
+      "answer": "King Louis XIV"
+    },
+    {
+      "question": "Which European capital city is divided by the Danube River?",
+      "options": ["Vienna", "Budapest", "Bratislava", "Belgrade"],
+      "answer": "Budapest"
+    }
+  ]
+    
+}

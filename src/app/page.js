@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Confetti from "react-confetti";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import classNames from 'classnames';
 
 export default function Home() {
   const [questions, setQuestions] = useState([]);
@@ -10,6 +11,8 @@ export default function Home() {
   const [score, setScore] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [user, setUser] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
   const quizRef = useRef(null);
 
   useEffect(() => {
@@ -50,7 +53,9 @@ export default function Home() {
   const currentQuestion = questions[currentQuestionIndex];
 
   function handleAnswer(option) {
+    setSelectedOption(option);
     if (option === currentQuestion.answer) {
+      setIsCorrect(true);
       setScore(score + 1);
       setShowConfetti(true);
       setTimeout(() => {
@@ -58,11 +63,16 @@ export default function Home() {
         handleNextQuestion();
       }, 2000);
     } else {
-      handleNextQuestion();
+      setIsCorrect(false);
+      setTimeout(() => {
+        handleNextQuestion();
+      }, 2000);
     }
   }
 
   function handleNextQuestion() {
+    setSelectedOption(null);
+    setIsCorrect(null);
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -93,7 +103,18 @@ export default function Home() {
 
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-      <div className="flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white p-8 font-sans">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white p-8 font-sans relative">
+        {showConfetti && (
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={500}
+            recycle={false}
+            gravity={-0.3}
+            initialVelocityX={{ min: -10, max: 10 }}
+            initialVelocityY={{ min: -10, max: -20 }}
+          />
+        )}
         <section className="flex flex-col items-center justify-center mt-32">
           <h1 className="text-6xl font-bold text-center mt-10 mb-8">
             The Europe Trivia Quiz
@@ -116,8 +137,6 @@ export default function Home() {
           </svg>
         </button>
 
-        {showConfetti && <Confetti />}
-        
         <header className="text-2xl font-bold mt-20 mb-4">Score: {score}</header>
         
         <main ref={quizRef} className="flex flex-col items-center gap-8">
@@ -129,22 +148,20 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => handleAnswer(option)}
-                className="px-4 py-2 bg-yellow-500 text-black rounded-full hover:bg-yellow-600 transition-colors cursor-pointer"
+                className={classNames(
+                  "px-4 py-2 rounded-full transition-colors cursor-pointer",
+                  {
+                    "bg-green-500 text-black": selectedOption === option && isCorrect === true,
+                    "bg-red-500 text-black shake": selectedOption === option && isCorrect === false,
+                    "bg-yellow-500 text-black hover:bg-yellow-600": selectedOption !== option
+                  }
+                )}
               >
                 {option}
               </button>
             ))}
+          
           </div>
-
-          {!user && (
-            <GoogleLogin
-              onSuccess={responseGoogle}
-              onError={() => {
-                console.log('Login Failed');
-              }}
-              className="mt-4 cursor-pointer"
-            />
-          )}
         </main>
       </div>
     </GoogleOAuthProvider>
