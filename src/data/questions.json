@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "category": "geography",
+    "question": "Which is the largest country by area in Europe?",
+    "answers": [
+      "Ukraine",
+      "France",
+      "Russia",
+      "Spain"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Russia is the largest country in Europe by area, covering around 3.9 million square kilometers of European territory."
+  },
+  {
+    "id": 2,
+    "category": "geography",
+    "question": "Which European capital city is situated on the Danube River?",
+    "answers": [
+      "Prague",
+      "Vienna",
+      "Warsaw",
+      "Rome"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vienna, the capital of Austria, is located on the banks of the Danube River."
+  },
+  {
+    "id": 3,
+    "category": "geography",
+    "question": "What is the highest mountain in the European Union?",
+    "answers": [
+      "Mont Blanc",
+      "Mount Elbrus",
+      "Matterhorn",
+      "Mount Etna"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Mont Blanc, located on the French-Italian border, is the highest mountain in the European Union at 4,810 meters."
+  },
+  {
+    "id": 4,
+    "category": "history",
+    "question": "When did the Berlin Wall fall?",
+    "answers": [
+      "1987",
+      "1989",
+      "1991",
+      "1993"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Berlin Wall fell on November 9, 1989, marking a pivotal moment in European history and the end of the Cold War era."
+  },
+  {
+    "id": 5,
+    "category": "history",
+    "question": "Which European country was ruled by Francisco Franco from 1939 to 1975?",
+    "answers": [
+      "Portugal",
+      "Italy",
+      "Spain",
+      "Greece"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Spain was ruled by dictator Francisco Franco from 1939 until his death in 1975."
+  },
+  {
+    "id": 6,
+    "category": "politics",
+    "question": "In which city were the original treaties establishing the European Economic Community signed?",
+    "answers": [
+      "Brussels",
+      "Rome",
+      "Paris",
+      "Strasbourg"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Treaties of Rome, which established the European Economic Community, were signed in Rome, Italy, in 1957."
+  },
+  {
+    "id": 7,
+    "category": "politics",
+    "question": "Which of these countries is NOT a member of the European Union?",
+    "answers": [
+      "Croatia",
+      "Switzerland",
+      "Romania",
+      "Portugal"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Switzerland is not a member of the European Union, though it has many bilateral agreements with the EU."
+  },
+  {
+    "id": 8,
+    "category": "economy",
+    "question": "Which European country has the largest economy by GDP?",
+    "answers": [
+      "France",
+      "United Kingdom",
+      "Germany",
+      "Italy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Germany has the largest economy in Europe by GDP."
+  },
+  {
+    "id": 9,
+    "category": "economy",
+    "question": "Which European city is considered the largest financial center in Europe?",
+    "answers": [
+      "London",
+      "Frankfurt",
+      "Paris",
+      "Zurich"
+    ],
+    "correctAnswer": 0,
+    "explanation": "London is considered the largest financial center in Europe, despite Brexit."
+  },
+  {
+    "id": 10,
+    "category": "flags",
+    "question": "Which European country's flag consists of a white cross on a red background?",
+    "answers": [
+      "Denmark",
+      "Switzerland",
+      "Norway",
+      "Poland"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Switzerland's flag is a white cross on a red square background."
+  },
+  {
+    "id": 11,
+    "category": "flags",
+    "question": "Which of these countries has a flag with three equal horizontal bands of red, white, and red?",
+    "answers": [
+      "Czech Republic",
+      "Poland",
+      "Austria",
+      "Hungary"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Austria's flag consists of three equal horizontal bands of red, white, and red."
+  },
+  {
+    "id": 12,
+    "category": "sports",
+    "question": "Which country has won the most UEFA European Championships (Euros) in football?",
+    "answers": [
+      "Germany",
+      "Spain",
+      "France",
+      "Italy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Germany has won the most UEFA European Championships with 3 titles (as West Germany in 1972 and 1980, and as unified Germany in 1996)."
+  },
+  {
+    "id": 13,
+    "category": "sports",
+    "question": "Which city has hosted the modern Olympic Games three times?",
+    "answers": [
+      "Paris",
+      "London",
+      "Athens",
+      "Rome"
+    ],
+    "correctAnswer": 1,
+    "explanation": "London has hosted the modern Olympic Games three times: in 1908, 1948, and 2012."
+  },
+  {
+    "id": 14,
+    "category": "art",
+    "question": "Which European city is home to the Louvre Museum?",
+    "answers": [
+      "Rome",
+      "London",
+      "Paris",
+      "Madrid"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Louvre Museum is located in Paris, France, and is one of the world's largest and most visited art museums."
+  },
+  {
+    "id": 15,
+    "category": "art",
+    "question": "Which European artist painted 'The Night Watch'?",
+    "answers": [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Rembrandt van Rijn"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Night Watch is a famous painting by Dutch artist Rembrandt van Rijn, completed in 1642."
+  },
+  {
+    "id": 16,
+    "category": "geography",
+    "question": "Which European country has the most islands?",
+    "answers": [
+      "Greece",
+      "Sweden",
+      "Norway",
+      "Finland"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sweden has the most islands in Europe, with approximately 267,570 islands."
+  },
+  {
+    "id": 17,
+    "category": "history",
+    "question": "When did the French Revolution begin?",
+    "answers": [
+      "1776",
+      "1789",
+      "1804",
+      "1815"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The French Revolution began in 1789 with the storming of the Bastille on July 14."
+  },
+  {
+    "id": 18,
+    "category": "politics",
+    "question": "Which European country was the first to give women the right to vote?",
+    "answers": [
+      "United Kingdom",
+      "France",
+      "Finland",
+      "Sweden"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Finland was the first European country to grant women the right to vote in 1906."
+  },
+  {
+    "id": 19,
+    "category": "economy",
+    "question": "When was the Euro currency introduced as electronic payments?",
+    "answers": [
+      "1995",
+      "1999",
+      "2002",
+      "2005"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Euro was introduced for electronic payments on January 1, 1999, while physical notes and coins were introduced in 2002."
+  },
+  {
+    "id": 20,
+    "category": "flags",
+    "question": "Which country has a maple leaf on its flag?",
+    "answers": [
+      "Norway",
+      "Canada",
+      "Iceland",
+      "Denmark"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Canada has a red maple leaf centered on a white square on its flag."
+  },
+  {
+    "id": 21,
+    "category": "sports",
+    "question": "In which European city is the Camp Nou football stadium located?",
+    "answers": [
+      "Madrid",
+      "Barcelona",
+      "Lisbon",
+      "Milan"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Camp Nou is located in Barcelona, Spain, and is the home stadium of FC Barcelona."
+  },
+  {
+    "id": 22,
+    "category": "art",
+    "question": "Which famous European cathedral was severely damaged by fire in 2019?",
+    "answers": [
+      "St. Peter's Basilica",
+      "Notre Dame",
+      "Sagrada Familia",
+      "Cologne Cathedral"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Notre Dame Cathedral in Paris was severely damaged by fire on April 15, 2019."
+  },
+  {
+    "id": 23,
+    "category": "geography",
+    "question": "Which European country is known as 'The Land of Fire and Ice'?",
+    "answers": [
+      "Norway",
+      "Finland",
+      "Iceland",
+      "Sweden"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Iceland is known as 'The Land of Fire and Ice' due to its volcanoes and glaciers."
+  },
+  {
+    "id": 24,
+    "category": "history",
+    "question": "What was the name of the famous ship that sank on its maiden voyage from Southampton to New York City in 1912?",
+    "answers": [
+      "Queen Mary",
+      "Lusitania",
+      "Titanic",
+      "Britannic"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The RMS Titanic sank on its maiden voyage after hitting an iceberg on April 15, 1912."
+  },
+  {
+    "id": 25,
+    "category": "politics",
+    "question": "How many states are in the European Union (as of 2022)?",
+    "answers": [
+      "25",
+      "27",
+      "28",
+      "30"
+    ],
+    "correctAnswer": 1,
+    "explanation": "As of 2022, the European Union consists of 27 member states, following the United Kingdom's departure in 2020."
+  },
+  {
+    "id": 26,
+    "category": "economy",
+    "question": "Which European country is famous for its watchmaking industry?",
+    "answers": [
+      "Germany",
+      "Austria",
+      "Switzerland",
+      "Belgium"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Switzerland is world-renowned for its watchmaking industry, producing many luxury watch brands."
+  },
+  {
+    "id": 27,
+    "category": "flags",
+    "question": "Which of these countries has a yellow cross on a blue background on its flag?",
+    "answers": [
+      "Finland",
+      "Norway",
+      "Sweden",
+      "Iceland"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sweden's flag features a yellow cross on a blue background."
+  },
+  {
+    "id": 28,
+    "category": "sports",
+    "question": "Which European city hosted the 2012 Summer Olympics?",
+    "answers": [
+      "Paris",
+      "London",
+      "Berlin",
+      "Rome"
+    ],
+    "correctAnswer": 1,
+    "explanation": "London hosted the 2012 Summer Olympics."
+  },
+  {
+    "id": 29,
+    "category": "art",
+    "question": "Who painted 'The Starry Night'?",
+    "answers": [
+      "Claude Monet",
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Salvador Dalí"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Starry Night was painted by Dutch artist Vincent van Gogh in 1889."
+  },
+  {
+    "id": 30,
+    "category": "geography",
+    "question": "Which European country has the longest coastline?",
+    "answers": [
+      "Italy",
+      "Greece",
+      "Norway",
+      "Spain"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Norway has the longest coastline in Europe, measuring approximately 25,148 kilometers."
+  }
+] 
